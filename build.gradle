@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'org.apache.poi', name: 'poi', version: '4.1.0' // core
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.0' // docx
+//	compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '4.1.0'
+	compile group: 'org.apache.poi', name: 'poi-scratchpad', version: '4.1.0' //doc
+	compile group: 'org.apache.xmlbeans', name: 'xmlbeans', version: '3.1.0'// dependency at doc
+
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+}
